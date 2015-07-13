@@ -1,0 +1,137 @@
+/* Site Containers
+--------------------------------------------- */
+
+.site-inner
+/*.site-inner .wrap */
+/* allow slider to be full-width, so you don't want to limit .site-inner .wrap, just .site-inner */
+{
+	margin: 0 auto;
+	max-width: 1140px;
+}
+
+.site-inner {
+	background: #fff;
+	clear: both;
+	/* margin: 40px auto 40px; */
+	margin: 200px auto 40px; /* adjust top margin on all non-home pages to account for header height */
+	padding: 40px;
+}
+
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	background-color: #fff;
+	padding: 60px 0 0px;
+	width: 100%;
+	/*z-index: 999;*/
+	z-index: 1998; /*float header above slider but below nav menu */
+	opacity: .9;  /*partially transparent and fixed header*/ 
+	position: fixed !important;
+	overflow: visible; 
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: left;
+	padding: 20px 0;
+	text-align: center;
+	/* width: 400px; */
+	width: 515px; /* expand header width to 515px */
+}
+
+.site-title {
+	border: none;
+	font-family: 'Lato', sans-serif;
+	font-size: 30px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 1;
+	margin: 0 auto;
+	/* Adjust header image size and remove extra padding */
+	/* padding: 15px */
+	/* width: 400px; */
+	 width: 515px;
+	text-transform: uppercase;
+}
+
+.header-image .site-title > a {
+	background-size: contain !important;
+	display: block;
+	/* enlarge header logo area */
+	/*height: 70px; */
+	height: 100px;
+	text-indent: -9999px;
+	/* max-width: 360px; */
+	max-width: 515px;
+}
+
+/* Primary Navigation
+--------------------------------------------- */
+
+.nav-primary {
+	/* background-color: #fff; partially transparent header background is now behind nav and header, so we don't want double layers */
+	text-align: center;
+	/*stick nav menu always at the top */
+	position: fixed;
+	/* viewable on top of everything else */
+ 	z-index: 2000;
+	/*spans entire width */   
+  	width: 100%;
+	/*partially transparent nav */	
+	opacity: .9;   
+}
+
+/* class to toggle with js for making menu background white once header has collapsed down */
+.whiteNav {
+	background-color: #fff;
+	z-index: 2000;
+	opacity: .9; 
+}
+
+/* Homepage
+--------------------------------------------- */
+.home-section-1 .wrap {
+	background: rgba(255, 255, 255, .5);
+	/* move slider to top of page and full width */
+	/* padding: 40px; */
+	/*width: 900px;*/
+	top: 0;
+  left: 0;
+  /*position: absolute;*/
+  width: 100%;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 960px) {
+
+.site-header {
+		/* remove extra logo padding on mobile */
+		/* padding-bottom: 10px; */
+		position: static;
+	}
+	
+	.site-inner {
+		/*keep margin below fixed header */
+		/*margin-top: 80px;*/
+	}
+}
+
+@media only screen and (max-width: 768px) {
+
+	/*make nav menu solid white and overlap header for mobile toggle */
+	.nav-primary {
+	background-color: #fff;
+	opacity: 1;
+	}
+
+	/* make header shrink as screen size changes, but stay as large as possible */
+	.site-title {
+		width: 100%;
+	}
+	
+}
+
